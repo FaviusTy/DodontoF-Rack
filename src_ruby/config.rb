@@ -67,13 +67,13 @@ $UPLOAD_REPALY_DATA_MAX_SIZE = 5.0
 $UPLOAD_FILE_MAX_SIZE = 10.0
 
 #プレイルームデータ(saveData)の相対パス。
-$SAVE_DATA_DIR = "../.."
+$SAVE_DATA_DIR = "."
 
 #ロックファイル作成先のチューニング用。nilなら $SAVE_DATA_DIR と同一になります。
 $SAVE_DATA_LOCK_FILE_DIR = nil
 
 #各画像(キャラクター・マップ)の保存パス
-$imageUploadDir = "../imageUploadSpace"
+$imageUploadDir = "imageUploadSpace"
 
 #イメージディレクトリを示すマーカー文字列
 $localUploadDirMarker = '###IMAGE_UPLOADL_SPACE###'
@@ -86,10 +86,10 @@ $imageUploadDirMarker = '###ROOM_LOCAL_SPACE###'
 $protectImagePaths = []
 
 #リプレイデータの保存パス
-$replayDataUploadDir = "./replayDataUploadSpace"
+$replayDataUploadDir = "replayDataUploadSpace"
 
 #セーブデータの一時保存パス
-$saveDataTempDir = "./saveDataTempSpace"
+$saveDataTempDir = "saveDataTempSpace"
 
 #ファイルアップローダーのパス
 $fileUploadDir = "fileUploadSpace"
