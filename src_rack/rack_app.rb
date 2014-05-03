@@ -14,7 +14,6 @@ Oj.default_options = {mode: :compat}
 DIR_PATH = File.expand_path('../', File.dirname(__FILE__)).freeze
 
 #TODO webif未着手
-#TODO 各種静的リソースの配置場所はconfig.rbの値に対応できるようにする
 #TODO gzip圧縮をRack::Deflateで対応
 
 class DodontoFRackApp < Sinatra::Base
