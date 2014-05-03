@@ -8,7 +8,7 @@ DodontoF-Rackはtorgtaitai氏の作成している[DodontoF](https://github.com/
 
 **WARNING**
 >現VerではWebIFは動作対象外としています。
->これについては本家で提起している[Issue]:(https://github.com/torgtaitai/DodontoF/issues/7)の取り込みを待って対応する予定です。
+>これについては本家で提起している[Issue](https://github.com/torgtaitai/DodontoF/issues/7)の取り込みを待って対応する予定です。
 
 ## 動作環境
 
@@ -51,7 +51,7 @@ DodontoF-Rackとして必要なリソースは`src_rack/`と`config.ru`のみで
 
 DodontoF-Rackは`src_rack/customized_server.rb`で設定されているversionとして動作します。
 
-```ruby:customized_server.rb
+```ruby
 
 module DodontoF
 
