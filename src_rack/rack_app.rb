@@ -38,6 +38,10 @@ class DodontoFRackApp < Sinatra::Base
     send_file File.join(DIR_PATH, 'DodontoF.swf')
   end
 
+  get '/favicon.ico' do
+    send_file File.join(DIR_PATH, 'favicon.ico')
+  end
+
   get '/' do
     send_file File.join(DIR_PATH, 'index.html')
   end
