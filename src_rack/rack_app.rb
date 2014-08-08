@@ -6,7 +6,6 @@ require 'sinatra/base'
 require 'oj'
 
 require_relative '../src_ruby/config'
-require_relative 'dodontof_filter'
 require_relative 'customized_server'
 
 Oj.default_options = {mode: :compat}
@@ -22,7 +21,6 @@ class DodontoFRackApp < Sinatra::Base
     mime_type :msgpack, 'application/x-msgpack'
   end
 
-  use Rack::FilterDodontoF
   use Rack::PostBodyMsgpackParser, override_params: true
 
   get '/image/*' do
