@@ -24,6 +24,20 @@ class DodontoFRackApp < Sinatra::Base
   use Rack::PostBodyMsgpackParser, override_params: true
   use Hardwired::Deflater, min_length: $gzipTargetSize if 0 < $gzipTargetSize
 
+  helpers do
+    def server(params)
+      @server = DodontoF::Server.new(params)
+
+      if @server.isJsonResult
+        content_type :json, charset:'utf-8'
+      else
+        content_type :msgpack, charset:'x-user-defined'
+      end
+
+      @server.response_body
+    end
+  end
+
   get '/image/*' do
     send_file File.join(DIR_PATH, 'image', params[:splat])
   end
@@ -44,16 +58,12 @@ class DodontoFRackApp < Sinatra::Base
     send_file File.join(DIR_PATH, 'index.html')
   end
 
+  post '/api/:webif' do
+    server(params)
+  end
+
   post '/DodontoFServer.rb' do
-    @server = DodontoF::Server.new(params)
-
-    if @server.isJsonResult
-      content_type :json, charset:'utf-8'
-    else
-      content_type :msgpack, charset:'x-user-defined'
-    end
-
-    @server.response_body
+    server(params)
   end
 
 end
